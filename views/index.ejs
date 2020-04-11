@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Restaurant Inventory Manage System</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <h1>Total Balance: $<%= xbalance %></h1>
+    <h3>Ingredient Table</h3>
+    <table>
+        <tr>
+            <th>Ingredients</th>
+            <th>Current Stock</th>
+            <th>Cost</th>
+            <th>Action</th>
+        </tr>
+        <tr>
+            <td>Potatoes</td>
+            <td><%= xpotatoes %></td>
+            <td>2</td>
+            <td><a href="/buyPotatoes"><button type="button" class="btn btn-danger">BUY</button></a></td>
+        </tr>
+        <tr>
+            <td>Eggs</td>
+            <td><%= xeggs %></td>
+            <td>1</td>
+            <td><a href="/buyEggs"><button type="button" class="btn btn-danger">BUY</button></a></td>
+        </tr>
+        <tr>
+            <td>Onions</td>
+            <td><%= xonions %></td>
+            <td>2</td>
+            <td><a href="/buyOnions"><button type="button" class="btn btn-danger">BUY</button></a></td>
+        </tr>
+    </table>
+    <br>
+    <br>
+    <h3>Recipe Table</h3>
+    <table>
+        <tr>
+            <th>Item</th>
+            <th>Recipe</th>
+            <th>Selling Price</th>
+            <th>Action</th>
+        </tr>
+        <tr>
+            <td>French Fries</td>
+            <td>Potatoes(3)</td>
+            <td>$40</td>
+            <td><a href="/sellFrenchFries"><button type="button" class="btn btn-info">SELL</button></a></td>
+        </tr>
+        <tr>
+            <td>Omelette</td>
+            <td>Eggs(4), Onions(1)</td>
+            <td>$30</td>
+            <td><a href="/sellOmelettes"><button type="button" class="btn btn-info">SELL</button></a></td>
+        </tr>
+    </table>
+    <% if(errorI){%> <script>alert('Insufficient Ingredients')</script> <%} %>
+    <% if(errorB){%> <script>alert('Insufficient Balance')</script> <%} %>
+</body>
+</html>
